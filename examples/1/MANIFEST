@@ -1,0 +1,7 @@
+
+hash: f84adeee0cbf2a267e00df741d7d3c66
+dimensions: /dimensions.yml
+rules:
+    - /conf1.yml
+    - /conf2.json
+

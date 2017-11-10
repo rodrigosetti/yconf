@@ -1,0 +1,28 @@
+- dimensions:
+    - runtime:
+        client:
+        server:
+
+    - device:
+        android:
+        blackberry:
+        iphone:
+        ipad:
+
+    - environment:
+        development:
+            dev:
+            test:
+        production:
+            stage:
+            prod:
+
+    - lang:
+        en:
+            en-US:
+            en-GB:
+            en-CA:
+        es:
+            es-ES:
+            es-MX:
+

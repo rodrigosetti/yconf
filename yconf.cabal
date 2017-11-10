@@ -1,0 +1,92 @@
+name          : yconf
+version       : 0.1.0.0
+synopsis      : Yahoo! Configuration System
+license       : BSD3
+license-file  : LICENSE
+author        : Rodrigo Setti
+maintainer    : rodrigosetti@gmail.com
+copyright     : Copyright 2017, Yahoo Holdings Inc.
+homepage      : https://github.com/rodrigosetti/yconf
+bug-reports   : https://github.com/rodrigosetti/yconf/issues
+category      : Data
+build-type    : Simple
+cabal-version : >=1.10
+description   :
+    YConf is a configuration server. It contains a collection of configuration
+    files (JSON or YAML) that specify multi-dimensional configuration data
+    (like YCB, but with some minor design differences), and respond to
+    contextual queries from clients in either a RESTful HTTP frontend or a
+    message pack RPC frontend (or both simultaneously).
+
+source-repository head
+  type     : git
+  location : git@github.com:rodrigosetti/yconf.git
+
+library
+  default-language : Haskell2010
+  ghc-options      : -Wall
+  hs-source-dirs   : src
+  exposed          : False
+  exposed-modules  : YConf.Backend
+                   , YConf.Backend.FileSystem
+                   , YConf.Backend.HTTP
+                   , YConf.Frontend
+                   , YConf.Frontend.HTTP
+                   , YConf.Frontend.MessagePack
+                   , YConf.Live
+                   , YConf.Tree
+                   , YConf.Types
+  other-modules    : YConf.Backend.Helpers
+                   , YConf.Frontend.Helpers
+  build-depends    : base
+                   , async
+                   , aeson
+                   , cereal
+                   , containers
+                   , bytestring
+                   , data-default
+                   , directory
+                   , filepath
+                   , http-client
+                   , http-types
+                   , messagepack
+                   , messagepack-rpc
+                   , network-uri
+                   , network-simple
+                   , scientific
+                   , text
+                   , time
+                   , time-units
+                   , tinylog
+                   , unordered-containers
+                   , vector
+                   , wai
+                   , wai-extra
+                   , warp
+                   , yaml
+
+executable yconf
+  default-language : Haskell2010
+  hs-source-dirs   : bin
+  main-is          : Main.hs
+  build-depends    : base
+                   , aeson
+                   , async
+                   , optparse-applicative
+                   , text
+                   , tinylog
+                   , yaml
+                   , yconf
+
+test-Suite test-yconf
+    default-language : Haskell2010
+    hs-source-dirs   : tests
+    test-module      : Tests
+    other-modules    : Helpers
+    type             : detailed-0.9
+    build-depends    : base
+                     , Cabal
+                     , bytestring
+                     , scientific
+                     , yaml
+                     , yconf

@@ -1,0 +1,26 @@
+# master
+- settings: {}
+
+  location_backend:
+      hostname : geo.data-example.com
+      path     : /data/fetch
+
+  features:
+      use_library_x     : true
+      use_library_y     : false
+      library_z_version : 7
+
+# client
+- settings:
+    runtime: client
+
+  features:
+      use_library_x: false
+
+# development
+- settings:
+    environment: development
+
+  location_backend:
+      hostname: mock.geo.data-example.com
+

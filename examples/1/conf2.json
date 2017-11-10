@@ -1,0 +1,22 @@
+[
+    {
+        "settings": {
+            "environment": "dev"
+        },
+
+         "location_backend" : {
+              "hostname": "dev.geo.data-example.com"
+         }
+    },
+    {
+        "settings": {
+            "runtime" : "client",
+            "device"  : "iphone"
+        },
+
+        "features": {
+              "library_z_version": 9
+        }
+    }
+]
+
